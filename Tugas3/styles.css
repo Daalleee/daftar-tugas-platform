@@ -1,0 +1,115 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif; /* Ganti ke font yang lebih modern */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f5f7fa, #c3e0e5); /* Latar belakang gradien */
+    color: #2d2d2d;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(to right, #88c4f1, #245ff6); /* Header gradien dengan warna hangat */
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 1.2em;
+    color: #fff;
+    margin: 10px 0 0;
+    font-size: 27px;
+}
+
+main {
+    padding: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.image-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.image-container img {
+    width: 48%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.image-container img:hover {
+    transform: scale(1.05);
+}
+
+section {
+    background: #fff;
+    margin-bottom: 30px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    color: hsl(221, 100%, 69%); /* Warna hangat yang selaras dengan header */
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #8992f4;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Warna berbeda untuk setiap bagian */
+.nature-section {
+    border-left: 5px solid #6ab04c; /* Hijau untuk keindahan alam */
+}
+
+.culture-section {
+    border-left: 5px solid #d63031; /* Merah untuk budaya */
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #2d3436; /* Warna gelap untuk footer */
+    color: #dfe6e9;
+    font-size: 0.9em;
+}
+
+blockquote {
+    font-style: italic;
+    background: #f4f1f4;
+    border-left: 6px solid #5a77ea;
+    padding: 5px 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    color: #555;
+}
