@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tugas 4 - JavaScript</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <header>
+
+            <h1>Nama: Leonardus Dale Masan</h1>
+            <h2>NIM: 235314071</h2>
+            <img src="logoUSD.png" alt="Foto" class="profile-photo">
+
+        </header>
+
+        <div class="container">
+            <h2>Form Input</h2>
+
+            <label>Nama:</label>
+            <input type="text" id="name" placeholder="Masukkan nama">
+
+            <laebel>Jumlah Pilihan:</laebel>
+            <input type="number" id="numChoices" placeholder="Jumlah" min="1">
+
+            <input type="button" value="OK" id="submitBtn">
+
+            <div id="choiceInputs" class="hidden choice-inputs"></div>
+            <div id="finalChoice" class="hidden"></div>
+        </div>
+
+        <script src="code.js"></script>
+    </body>
+</html>
