@@ -12,6 +12,12 @@ document.getElementById("submitBtn").addEventListener("click", function () {
     return;
   }
 
+
+  document.getElementById("submitBtn").disabled = true;
+  document.getElementById("name").disabled = true;
+  document.getElementById("numChoices").disabled = true;
+  
+
   let choiceInputs = "<h3>Masukkan Pilihan:</h3>";
   for (let i = 1; i <= numChoices; i++) {
     choiceInputs += `
@@ -27,7 +33,6 @@ document.getElementById("submitBtn").addEventListener("click", function () {
   document.getElementById("choiceInputs").classList.remove("hidden");
 
   document
-
     .getElementById("submitChoicesBtn")
     .addEventListener("click", function () {
       let choices = [];
@@ -38,6 +43,12 @@ document.getElementById("submitBtn").addEventListener("click", function () {
           return;
         }
         choices.push(choice);
+      }
+
+      
+      document.getElementById("submitChoicesBtn").disabled = true;
+      for (let i = 1; i <= numChoices; i++) {
+        document.getElementById(`choice${i}`).disabled = true;
       }
 
       let finalHTML = `<h3>Pilihan:</h3>`;
@@ -59,7 +70,7 @@ document.getElementById("submitBtn").addEventListener("click", function () {
             'input[name="finalChoice"]:checked'
           );
           if (!selectedChoice) {
-            alert("Harap pilih salah satu pilihan.");
+            alert("Harap pilih salah satu pilihan."); 
             return;
           }
           const result = `Hallo, nama saya ${name}, saya mempunyai sejumlah ${numChoices} pilihan yaitu ${choices.join(
