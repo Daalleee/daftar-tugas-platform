@@ -12,11 +12,11 @@ document.getElementById("submitBtn").addEventListener("click", function () {
     return;
   }
 
-
+  // Disable and hide the submit button
   document.getElementById("submitBtn").disabled = true;
+  document.getElementById("submitBtn").style.display = "none";
   document.getElementById("name").disabled = true;
   document.getElementById("numChoices").disabled = true;
-  
 
   let choiceInputs = "<h3>Masukkan Pilihan:</h3>";
   for (let i = 1; i <= numChoices; i++) {
@@ -45,8 +45,9 @@ document.getElementById("submitBtn").addEventListener("click", function () {
         choices.push(choice);
       }
 
-      
+      // Disable and hide the submit choices button
       document.getElementById("submitChoicesBtn").disabled = true;
+      document.getElementById("submitChoicesBtn").style.display = "none";
       for (let i = 1; i <= numChoices; i++) {
         document.getElementById(`choice${i}`).disabled = true;
       }
@@ -70,13 +71,16 @@ document.getElementById("submitBtn").addEventListener("click", function () {
             'input[name="finalChoice"]:checked'
           );
           if (!selectedChoice) {
-            alert("Harap pilih salah satu pilihan."); 
+            alert("Harap pilih salah satu pilihan.");
             return;
           }
           const result = `Hallo, nama saya ${name}, saya mempunyai sejumlah ${numChoices} pilihan yaitu ${choices.join(
             ", "
           )}, dan saya memilih ${selectedChoice.value}.`;
           alert(result);
+
+          document.getElementById("showResultBtn").disabled = true;
+          document.getElementById("showResultBtn").style.display = "none";
         });
     });
 });
