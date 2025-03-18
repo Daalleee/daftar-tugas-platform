@@ -12,7 +12,6 @@ document.getElementById("submitBtn").addEventListener("click", function () {
     return;
   }
 
-  // Disable and hide the submit button
   document.getElementById("submitBtn").disabled = true;
   document.getElementById("submitBtn").style.display = "none";
   document.getElementById("name").disabled = true;
@@ -45,7 +44,6 @@ document.getElementById("submitBtn").addEventListener("click", function () {
         choices.push(choice);
       }
 
-      // Disable and hide the submit choices button
       document.getElementById("submitChoicesBtn").disabled = true;
       document.getElementById("submitChoicesBtn").style.display = "none";
       for (let i = 1; i <= numChoices; i++) {
