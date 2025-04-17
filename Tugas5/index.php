@@ -38,17 +38,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Todo App</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <div class="header">
         <img src="img/i.jpg" alt="Profile Picture" class="profile-pic">
         <div class="header-info">
-            <h1>Todo Application</h1>
+            <h1>To-do list</h1>
             <p>Dalle | Masan</p>
             <p>235314071</p>
         </div>
@@ -76,4 +78,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </div>
     </div>
 </body>
+
 </html>
