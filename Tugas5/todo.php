@@ -88,7 +88,11 @@ $todos = $stmt->fetchAll(PDO::FETCH_ASSOC);
                                 <?php endif; ?>
                             </span>
                             <div class="todo-actions">
-                                <a href="?complete=<?php echo $todo['id']; ?>" class="btn-complete">Selesai</a>
+                                <a href="?complete=<?php echo $todo['id']; ?>"
+                                    class="btn-complete"
+                                    <?php echo $todo['completed'] ? 'disabled style="pointer-events: none; opacity: 0.5;"' : ''; ?>>
+                                    Selesai
+                                </a>
                                 <a href="?delete=<?php echo $todo['id']; ?>" class="btn-delete">Hapus</a>
                             </div>
                         </div>
