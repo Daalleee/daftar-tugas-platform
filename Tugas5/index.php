@@ -36,7 +36,7 @@ if (isset($_POST['login'])) {
 
       <div class="form-group">
         <label for="username">Username</label>
-        <input type="text" name="username" id="username" placeholder="Masukkan username" required>
+        <input type="text" name="username" id="username" placeholder="Masukkan username" required autocomplete="off">
       </div>
 
       <div class="form-group">
