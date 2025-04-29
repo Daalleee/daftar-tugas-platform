@@ -28,6 +28,15 @@ if (isset($_GET['hapus'])) {
 }
 
 $result = mysqli_query($conn, "SELECT * FROM todos WHERE username = '$username'");
+
+// Pagination
+$jumlahPerHal = 3;
+$halaman = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$offset = ($halaman - 1) * $jumlahPerHal;
+
+$result = mysqli_query($conn, "SELECT * FROM todos WHERE username = '$username' LIMIT $jumlahPerHal OFFSET $offset");
+$totalTugas = mysqli_fetch_array(mysqli_query($conn, "SELECT COUNT(*) FROM todos WHERE username = '$username'"))[0];
+$totalHalaman = ceil($totalTugas / $jumlahPerHal);
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +64,7 @@ $result = mysqli_query($conn, "SELECT * FROM todos WHERE username = '$username'"
 
       <!-- Tombol Tambah -->
       <form method="POST" class="add-task-form">
-        <input type="text" name="task" placeholder="Tulis pesan" required>
+        <input type="text" name="task" placeholder="Tulis pesan" required autocomplete="off">
         <button type="submit" name="tambah" class="btn-blue">Tambah</button>
       </form>
 
@@ -75,6 +84,14 @@ $result = mysqli_query($conn, "SELECT * FROM todos WHERE username = '$username'"
           </div>
         <?php endwhile; ?>
       </div>
+
+      <!-- Pagination -->
+      <div class="pagination">
+        <?php for ($i = 1; $i <= $totalHalaman; $i++): ?>
+          <a href="?page=<?= $i ?>" class="<?= $i === $halaman ? 'active' : '' ?>"><?= $i ?></a>
+        <?php endfor; ?>
+      </div>
+
 
       <!-- Logout -->
       <a href="logout.php"><button class="btn-blue logout">Logout</button></a>
